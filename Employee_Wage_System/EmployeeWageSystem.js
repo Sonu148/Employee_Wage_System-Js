@@ -1,10 +1,14 @@
-const IS_ABSENT=0;
 
-let empCheck = Math.floor(Math.random() * 10) % 2;
-if (empCheck == IS_ABSENT) {
-    console.log("Employee is Absent");
-    return;
+function getWorkHours(empCheck) {
+    switch (empCheck) {
+        case 1: return 4;
+        case 2: return 8;
+        default: return 0;
+    }
 }
-else {
-    console.log("Employee is Present");
-}
+
+const WAGE_PER_HOUR = 20;
+let empCheck = Math.floor(Math.random() * 3); 
+let empHours = getWorkHours(empCheck);
+let empWage = empHours * WAGE_PER_HOUR;
+console.log("Employee Wage: $" + empWage);
