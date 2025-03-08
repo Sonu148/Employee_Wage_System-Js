@@ -49,6 +49,16 @@ console.log("Is There Any Part-Time Wage?", hasPartTime);
 let daysWorked = dailyWages.filter(wage => wage > 0).length;
 console.log("Number of Days Worked:", daysWorked);
 
+let dailyWageMap = new Map();
+
+for (let day = 1; day <= WORKING_DAYS; day++) {
+    let empCheck = Math.floor(Math.random() * 3);
+    let dailyHours = getWorkHours(empCheck);
+    let dailyWage = dailyHours * WAGE_PER_HOUR;
+    dailyWageMap.set(day, dailyWage);
+}
+
+console.log("Daily Wage Map:", dailyWageMap);
 
 
 
