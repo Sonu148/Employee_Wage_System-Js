@@ -1,14 +1,16 @@
-
-const WAGE_PER_HOUR = 20;
-const WORKING_DAYS = 20;
-
+// UC 5
+const MAX_HOURS = 160;
+const MAX_DAYS = 20;
 let totalEmpHours = 0;
+let totalDays = 0;
 
-for (let day = 0; day < WORKING_DAYS; day++) {
+while (totalEmpHours < MAX_HOURS && totalDays < MAX_DAYS) {
     let empCheck = Math.floor(Math.random() * 3);
     totalEmpHours += getWorkHours(empCheck);
+    totalDays++;
 }
 
-let monthlyWage = totalEmpHours * WAGE_PER_HOUR;
-console.log("Total Employee Wage for the Month: $" + monthlyWage);
+let totalWage = totalEmpHours * WAGE_PER_HOUR;
+console.log("Total Employee Wage: $" + totalWage);
+
 
